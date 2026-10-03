@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alex Nguyen — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chango&family=Pacifico&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3ee;--card:#fffaf0;--wine:#3c4a7c;--ink:#3c4a7c;--salmon:#ffc978;--green:#d95f55;--sage:#86a6a9;--white:#fff;--pink:#d95f55;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#232a47;--card:#2d3659;--wine:#86a6a9;--ink:#fff0d6;--salmon:#ffc978;--green:#ec7a70;--sage:#86a6a9;--white:#34406b;--pink:#d95f55}}
+:root[data-theme="dark"]{--bg:#232a47;--card:#2d3659;--wine:#86a6a9;--ink:#fff0d6;--salmon:#ffc978;--green:#ec7a70;--sage:#86a6a9;--white:#34406b;--pink:#d95f55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;line-height:1.6;padding:14px}
+.frame{max-width:980px;margin:0 auto;border:8px solid var(--wine);border-radius:22px 34px 18px 30px/28px 16px 32px 20px;padding:32px 28px 40px}
+header{text-align:center}
+h1{font-family:Chango,Impact,sans-serif;font-weight:400;margin:0;font-size:clamp(34px,8vw,64px);color:var(--salmon);text-shadow:3px 3px 0 var(--wine),5px 5px 0 var(--pink);letter-spacing:1px}
+.roles{font-weight:700;font-size:clamp(14px,2.6vw,20px);margin-top:6px}
+.roles i{color:var(--salmon);font-style:normal;margin:0 8px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:26px 0 30px}
+nav button{font:700 15px Outfit,sans-serif;color:var(--ink);background:transparent;border:2px dashed var(--wine);padding:8px 18px;cursor:pointer;border-radius:20px 12px 22px 14px/14px 22px 12px 20px}
+nav button[aria-selected=true]{background:var(--salmon);color:#2b3560;border-style:solid}
+.label{display:inline-block;background:var(--salmon);color:#2b3560;font-weight:700;font-size:22px;padding:6px 34px;margin:0 0 18px;border-radius:30px 12px 28px 10px/12px 26px 10px 28px}
+.hi{font-family:Pacifico,cursive;color:var(--green);font-size:42px;margin:0 0 8px}
+section{display:none}section.on{display:block}
+.about{max-width:720px;margin:0 auto}
+.avatar{aspect-ratio:1;background:var(--sage);border-radius:48% 52% 46% 54%/55% 45% 55% 45%;display:grid;place-items:center;color:var(--card);font-weight:600;text-align:center;border:4px solid var(--wine)}
+.about p{text-align:justify;margin:0 0 14px}
+.tags{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-weight:600}
+.tags span::before{content:"✦ ";color:var(--green)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.contacts{background:var(--white);padding:22px 26px;border-radius:50px 40px 56px 36px/40px 50px 38px 52px}
+.contacts p{margin:6px 0}
+.contacts b{color:var(--green)}
+.bar{height:16px;border:2px solid var(--wine);border-radius:10px;margin:0 0 12px;overflow:hidden}
+.bar div{height:100%;background:var(--sage)}
+.skill{display:flex;justify-content:space-between;font-weight:600;font-size:14px;margin-bottom:3px}
+.job{margin-bottom:16px}.job b{display:block;font-size:18px}.job small{opacity:.85}.job p{margin:4px 0 0;font-size:14px}
+img,video{-webkit-user-drag:none;user-select:none}
+.edu small{opacity:.85}
+.tl{display:grid;grid-template-columns:54px 1fr;gap:4px 12px;font-size:14px}
+.tl b{color:var(--green)}
+.showcase{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.ph{position:relative;background:var(--card);border:3px dashed var(--wine);border-radius:22px 12px 24px 14px/14px 24px 12px 22px;overflow:hidden;display:grid;place-items:center;color:var(--wine);font-weight:600;text-align:center;padding:10px;cursor:pointer;transition:transform .2s}
+.ph:hover{transform:rotate(-1deg) scale(1.02)}
+.v{aspect-ratio:16/9}
+.ph .play{width:54px;height:54px;border-radius:50%;color:#2b3560;background:var(--salmon);display:grid;place-items:center;margin:0 auto 6px;font-size:20px}
+.cap{margin:8px 4px 0;font-size:14px;font-weight:600}
+.masonry{columns:3 220px;column-gap:18px}
+.masonry .ph{margin-bottom:18px;break-inside:avoid}
+.card{background:var(--card);border:3px solid var(--wine);padding:20px;border-radius:22px 12px 24px 14px/14px 24px 12px 22px}
+.card span{font-size:28px}.card b{display:block;font-size:18px;margin:6px 0 4px}.card p{margin:0;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.steps div{border-top:4px solid var(--salmon);padding-top:8px}.steps i{font-style:normal;font-weight:700;color:var(--green)}.steps b{display:block}.steps p{margin:2px 0 0;font-size:14px}
+.note{font-size:14px;opacity:.8;margin-top:22px;text-align:center}
+footer{text-align:center;margin-top:36px;font-size:13px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}.frame{padding:24px 16px 32px}}
+</style>
+</head>
+<body>
+<div class="frame">
+<header>
+<h1>Alex Nguyen</h1>
+<div class="roles">motion graphic design<i>|</i>video editing</div>
+</header>
+<nav role="tablist">
+<button role="tab" data-t="about" aria-selected="true">About Me</button>
+<button role="tab" data-t="info" aria-selected="false">Work &amp; Education</button>
+<button role="tab" data-t="what" aria-selected="false">What I Do</button>
+<button role="tab" data-t="videos" aria-selected="false">Video Work</button>
+</nav>
+
+<section id="about" class="on">
+<div class="about">
+<div>
+<h2 class="hi">Lights, camera, motion!</h2>
+<p>I'm a motion graphic designer with 4 years of experience, mostly in post-production for commercial ads and social video content. I'm used to receiving a brief and assets, working closely with art directors, and turning feedback into polished final cuts.</p>
+<p>I didn't start out in this field. I studied something completely different at university, then took a turn toward motion design and never looked back. These days I'm learning 3D to widen what I can bring to a project.</p>
+<div class="tags"><span>Motion Design</span><span>Post-production</span><span>3D Basics</span></div>
+<div class="label" style="margin-top:30px">Contacts</div>
+<div class="contacts">
+<p><b>📍</b> City, Country</p>
+<p><b>📞</b> +00 000 000 000</p>
+<p><b>✉</b> yourname@email.com</p>
+</div>
+<div class="label" style="margin-top:30px">Languages</div>
+<div class="tags"><span>Vietnamese (native)</span><span>English (IELTS 0.0)</span></div>
+</div>
+</div>
+</section>
+
+<section id="info">
+<div class="grid2">
+<div>
+<div class="label">Work</div>
+<div class="job"><b>Motion Graphic Designer</b><small>Company Name</small><p>Produced 100+ videos, from motion graphics ads to TikTok UGC-style content, across F&amp;B, beauty, fashion and healthcare, working from client briefs under an art director.</p></div>
+<div class="job"><b>Graphic Designer</b><small>Company Name</small><p>Designed digital banners and ad creatives, adapted across multiple sizes and aspect ratios for different platforms.</p></div>
+<div class="label" style="margin-top:30px">Education</div>
+<div class="job"><b>Bachelor's Degree in [Your Major]</b><small>Graduated 0000</small></div>
+<div class="job"><b>Project Lead — Short 3D Animation</b><small>School project · 0000</small><p>Led a team of 5. Responsible for concept, modelling, rigging, animation (selected shots), lighting, nCloth, art direction and compositing.</p></div>
+<div class="label" style="margin-top:30px">Courses &amp; Certificates</div>
+<div class="job"><b>IELTS Academic — Overall 0.0</b></div>
+<div class="job"><b>3D Course (Maya)</b><small>In progress · expected completion 0000</small></div>
+</div>
+<div>
+<div class="label">Software Skills</div>
+<div class="skill"><span>After Effects</span></div><div class="bar"><div style="width:90%"></div></div>
+<div class="skill"><span>Photoshop</span></div><div class="bar"><div style="width:75%"></div></div>
+<div class="skill"><span>Illustrator</span></div><div class="bar"><div style="width:70%"></div></div>
+<div class="skill"><span>Maya</span></div><div class="bar"><div style="width:60%"></div></div>
+<div class="skill"><span>Substance Painter</span></div><div class="bar"><div style="width:40%"></div></div>
+<div class="skill"><span>Blender</span></div><div class="bar"><div style="width:30%"></div></div>
+</div>
+</div>
+</section>
+
+<section id="what">
+<div class="label">What I Do</div>
+<div class="showcase cards">
+<div class="card"><span>🎬</span><b>Motion Graphics</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p></div>
+<div class="card"><span>✂️</span><b>Post-production</b><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></div>
+<div class="card"><span>🧊</span><b>3D Animation</b><p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p></div>
+<div class="card"><span>🖼️</span><b>Static Design</b><p>Excepteur sint occaecat cupidatat non proident sunt in culpa.</p></div>
+</div>
+<div class="label" style="margin-top:34px">How I Work</div>
+<div class="steps">
+<div><i>01</i><b>Brief &amp; assets</b><p>Receive the brief and assets from the client.</p></div>
+<div><i>02</i><b>Align</b><p>Discuss direction with the art director.</p></div>
+<div><i>03</i><b>First draft</b><p>Build the first cut or animation.</p></div>
+<div><i>04</i><b>Feedback</b><p>Refine based on notes and revisions.</p></div>
+<div><i>05</i><b>Delivery</b><p>Export and deliver final files.</p></div>
+</div>
+</section>
+<section id="videos">
+<div class="label">Video Work</div>
+<!--
+HOW TO ADD A VIDEO: replace one placeholder block below, from <div class="ph v"> to its closing </div>, with ONE of these.
+
+A) Video file (put the file in a folder named videos next to this index.html):
+<div class="ph v"><video src="videos/clip1.mp4" controls controlsList="nodownload" disablePictureInPicture preload="metadata" style="width:100%;height:100%;object-fit:cover"></video></div>
+
+B) Vimeo or YouTube (unlisted), use the embed link:
+<div class="ph v" style="padding:0"><iframe src="https://player.vimeo.com/video/YOUR_ID" style="width:100%;height:100%;border:0" allowfullscreen></iframe></div>
+
+To add more videos, copy a whole block. To remove one, delete the whole block.
+-->
+<div class="showcase">
+<div><div class="ph v"><div><div class="play">▶</div>Video placeholder</div></div></div>
+<div><div class="ph v"><div><div class="play">▶</div>Video placeholder</div></div></div>
+<div><div class="ph v"><div><div class="play">▶</div>Video placeholder</div></div></div>
+<div><div class="ph v"><div><div class="play">▶</div>Video placeholder</div></div></div>
+</div>
+<p class="note">Videos coming soon ✦</p>
+</section>
+
+</div>
+<script>
+const tabs=document.querySelectorAll('nav button'),secs=document.querySelectorAll('section');
+function show(id){
+tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));
+secs.forEach(s=>s.classList.toggle('on',s.id===id));
+}
+document.addEventListener('contextmenu',e=>{if(e.target.closest('#videos,#images'))e.preventDefault()});
+tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.t)));
+</script>
+</body>
+</html>
